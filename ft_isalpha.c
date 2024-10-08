@@ -1,36 +1,26 @@
-/* ************************************************************************** */
+        /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddel-rio <ddel-rio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 00:54:46 by ddel-rio          #+#    #+#             */
-/*   Updated: 2024/10/08 03:47:07 by ddel-rio         ###   ########.fr       */
+/*   Created: 2024/09/25 22:24:23 by ddel-rio          #+#    #+#             */
+/*   Updated: 2024/09/25 22:26:13 by ddel-rio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+ #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int ft_isalpha(int c)
 {
-	size_t	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
+      if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+        return (1);
+return(0);
 }
-
-// int	main(void)
+// int main ()
 // {
-// 	char	*s;
-
-// 	s = "Hola\0";
-// 	printf("%zu\n", ft_strlen(s));
-// 	return (0);
+//         int c = 'y';
+//         printf("%d \n", ft_isalpha(c));
+//         return (0);
 // }

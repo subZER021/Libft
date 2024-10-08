@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddel-rio <ddel-rio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 03:13:02 by delirio           #+#    #+#             */
-/*   Updated: 2024/10/08 03:46:43 by ddel-rio         ###   ########.fr       */
+/*   Created: 2024/09/26 00:18:54 by ddel-rio          #+#    #+#             */
+/*   Updated: 2024/09/26 00:33:17 by ddel-rio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
+#include "libft.h"
 
-// SOURCES
-
-size_t	ft_strlen(const char *str);
-int ft_isprint(int c);
-int ft_isdigit(int c);
-void *memset(void *s, int c, size_t n);
-int ft_isascii(int c);
-int ft_isalpha(int c);
-int ft_isalnum(int c);
-
-#endif
+int ft_isascii(int c)
+{
+ if (c >= 0 && c <= 127)
+    return(1);   
+return(0);
+}
+// int main ()
+// {
+// int c;
+// int k;
+// c = 'y';
+// k = 56534;
+// printf("%d\n", ft_isascii(c));
+// printf("%d\n", ft_isascii(k));
+//     return(0);
+// }
