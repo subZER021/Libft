@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 20:25:04 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/10/03 20:09:51 by mcorcher         ###   ########.fr       */
+/*   Created: 2024/10/04 23:50:00 by mcorcher          #+#    #+#             */
+/*   Updated: 2024/10/08 19:21:14 by mcorcher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-size_t	ft_strlen(const char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	while (s[i])
+		write(fd, &s[i++], 1);
 }
-/*#include <stdio.h>
-
-int main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		printf("%ld\n", ft_strlen(argv[1]));
-		return 0;
-	}
-	return 0;
-}*/

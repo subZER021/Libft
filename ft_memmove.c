@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 20:25:04 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/10/03 20:09:51 by mcorcher         ###   ########.fr       */
+/*   Created: 2024/10/01 20:56:44 by mcorcher          #+#    #+#             */
+/*   Updated: 2024/10/07 22:56:32 by mcorcher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	unsigned char	*destino;
+	unsigned char	*source;
+	size_t			i;
 
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	destino = (unsigned char *)dest;
+	source = (unsigned char *)src;
+	if (destino > source)
 	{
-		i++;
+		i = n;
+		while (i > 0)
+		{
+			i--;
+			destino[i] = source[i];
+		}
 	}
-	return (i);
+	else
+	{
+		ft_memcpy(dest, src, n);
+	}
+	return (dest);
 }
-/*#include <stdio.h>
-
-int main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		printf("%ld\n", ft_strlen(argv[1]));
-		return 0;
-	}
-	return 0;
-}*/

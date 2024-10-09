@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 20:25:04 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/10/03 20:09:51 by mcorcher         ###   ########.fr       */
+/*   Created: 2024/10/04 23:46:10 by mcorcher          #+#    #+#             */
+/*   Updated: 2024/10/07 17:58:38 by mcorcher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	write(fd, &c, 1);
 }
-/*#include <stdio.h>
-
-int main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		printf("%ld\n", ft_strlen(argv[1]));
-		return 0;
-	}
-	return 0;
-}*/

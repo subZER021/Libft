@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 20:25:04 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/10/03 20:09:51 by mcorcher         ###   ########.fr       */
+/*   Created: 2024/09/26 20:19:22 by mcorcher          #+#    #+#             */
+/*   Updated: 2024/10/08 19:22:49 by mcorcher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] != '\0' && i < size - 1)
 	{
+		dst[i] = src[i];
 		i++;
 	}
-	return (i);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
-/*#include <stdio.h>
-
-int main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		printf("%ld\n", ft_strlen(argv[1]));
-		return 0;
-	}
-	return 0;
-}*/

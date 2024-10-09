@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 20:25:04 by mcorcher          #+#    #+#             */
-/*   Updated: 2024/10/03 20:09:51 by mcorcher         ###   ########.fr       */
+/*   Created: 2024/10/04 23:53:54 by mcorcher          #+#    #+#             */
+/*   Updated: 2024/10/08 19:57:53 by mcorcher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	int	res;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (n == -2147483648)
 	{
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (i);
+	else if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = n * (-1);
+	}
+	res = n % 10;
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	res += 48;
+	write(fd, &res, 1);
 }
-/*#include <stdio.h>
-
-int main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		printf("%ld\n", ft_strlen(argv[1]));
-		return 0;
-	}
-	return 0;
-}*/

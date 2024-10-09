@@ -3,30 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddel-rio <ddel-rio@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcorcher <mcorcher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 02:53:17 by ddel-rio          #+#    #+#             */
-/*   Updated: 2024/10/08 03:57:36 by ddel-rio         ###   ########.fr       */
+/*   Created: 2024/09/25 17:41:40 by mcorcher          #+#    #+#             */
+/*   Updated: 2024/10/07 23:43:14 by mcorcher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	*memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    size_t i;
+	unsigned char	*ptr;
+	size_t			i;
 
-    i = 0;
-    while (i <= n)
-    {
-        ()s[i] = c;
-        i++;
-    }
-        
-	return s;
-}
-int	main(void)
-{
-    memset("Hola soy Ernesto", 0, 0);
-	return (0);
+	ptr = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		ptr[i] = (unsigned char)c;
+		i++;
+	}
+	return (s);
 }
